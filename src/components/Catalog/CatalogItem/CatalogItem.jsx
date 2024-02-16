@@ -3,13 +3,7 @@ import { CarCardStyled } from "./CatalogItem.styled";
 import Modal from "../../Modal/Modal";
 import Icon from "../../Icons1";
 
-const CatalogItem = ({
-  advert,
-  addFavorite,
-  // setFavorite,
-  removeFavorite,
-  isFavorite,
-}) => {
+const CatalogItem = ({ advert, addFavorite, removeFavorite, isFavorite }) => {
   const [openModal, setOpenModal] = useState(false);
 
   const closeModal = () => {
@@ -64,15 +58,12 @@ const CatalogItem = ({
           </div>
           <div className="car-details">
             <p>
-              {/* {address.split(" ").slice(-2).join(" ").replace(",", " |")} */}
-              {shortAdress[0]}
+              {shortAdress[3]}
               <span className="span-line"> | </span>
-              {shortAdress[1]}
+              {shortAdress[4]}
               <span className="span-line"> | </span>
               {rentalCompany}
             </p>
-            {/* <p>{rentalCompany}</p>
-        <p>{type}</p> */}
             <p>
               {type}
               <span className="span-line"> | </span>
@@ -82,20 +73,13 @@ const CatalogItem = ({
               <span className="span-line"> | </span>
               {functionalities[0]}
             </p>
-            {/* <p>{mileage}</p>
-        <p>{functionalities[0]}</p> */}
           </div>
         </div>
 
         <button className="button-card" onClick={() => setOpenModal(true)}>
           Learn more
         </button>
-        <Modal
-          open={openModal}
-          closeModal={closeModal}
-          advert={advert}
-          // id={id}
-        />
+        <Modal open={openModal} closeModal={closeModal} advert={advert} />
       </CarCardStyled>
     </>
   );

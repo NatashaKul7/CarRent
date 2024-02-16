@@ -71,7 +71,7 @@ export const CarCardStyled = styled.li`
   }
 
   .span-line {
-    width: 1px;
+    width: 2px;
     height: 16px;
     color: rgba(18, 20, 23, 0.1);
   }

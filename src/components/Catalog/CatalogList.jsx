@@ -7,11 +7,18 @@ import { useEffect, useState } from "react";
 
 const CatalogList = () => {
   const adverts = useSelector(getAdverts);
+  const [data, setNewData] = useState([]);
 
   const [favorite, setFavorite] = useState(
     () => JSON.parse(localStorage.getItem("favorite")) ?? []
   );
   const isFavorite = (id) => favorite.some((item) => item.id === id);
+
+  useEffect(() => {
+    if (adverts) {
+      setNewData((prev) => [...prev, ...adverts]);
+    }
+  }, [adverts]);
 
   useEffect(() => {
     localStorage.setItem("favorite", JSON.stringify(favorite));
@@ -33,15 +40,9 @@ const CatalogList = () => {
   // for loadMore
   // const [newAdverts, setNewAdverts] = useState([]);
 
-  // useEffect(() => {
-  //   if (adverts) {
-  //     setNewAdverts((prev) => [...prev, ...adverts]);
-  //   }
-  // }, [adverts]);
-
   return (
     <CarBoxStyled>
-      {adverts?.map((advert) => (
+      {data?.map((advert) => (
         <CatalogItem
           key={advert.id}
           advert={advert}
