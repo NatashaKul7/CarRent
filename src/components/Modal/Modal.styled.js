@@ -21,10 +21,17 @@ export const OverlayStyled = styled.div`
     border-radius: 24px;
   }
 
-  .button-close {
+  .icon-close {
     position: fixed;
+    width: 24px;
+    height: 24px;
     top: 16px;
     right: 16px;
+
+    stroke: var(--primary-black);
+  }
+  .icon-close:hover {
+    stroke: var(--primary-blue);
   }
 
   .modal-image {

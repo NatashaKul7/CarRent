@@ -9,7 +9,6 @@ export const CarCardStyled = styled.li`
   justify-content: space-between;
 
   .card-image {
-    position: relative;
     margin-bottom: 14px;
 
     width: 274px;
@@ -18,6 +17,31 @@ export const CarCardStyled = styled.li`
     background-color: #f3f3f2;
 
     object-fit: cover;
+  }
+
+  .img-box {
+    position: relative;
+  }
+
+  .button-heart {
+    position: absolute;
+    background-color: transparent;
+    top: 14px;
+    right: 14px;
+  }
+
+  .icon-heart {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: var(--primary-white);
+  }
+  .favorite {
+    width: 18px;
+    height: 18px;
+
+    fill: var(--bg-blue);
+    stroke: var(--bg-blue);
   }
 
   .car-info {
@@ -51,12 +75,6 @@ export const CarCardStyled = styled.li`
     height: 16px;
     color: rgba(18, 20, 23, 0.1);
   }
-
-  /* .icon-heart {
-    position: absolute;
-    top: 0;
-    right: 0;
-  } */
 
   .button-card {
     display: flex;

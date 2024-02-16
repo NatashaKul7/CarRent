@@ -1,8 +1,15 @@
 import { useState } from "react";
 import { CarCardStyled } from "./CatalogItem.styled";
 import Modal from "../../Modal/Modal";
+import Icon from "../../Icons1";
 
-const CatalogItem = ({ advert }) => {
+const CatalogItem = ({
+  advert,
+  addFavorite,
+  // setFavorite,
+  removeFavorite,
+  isFavorite,
+}) => {
   const [openModal, setOpenModal] = useState(false);
 
   const closeModal = () => {
@@ -10,7 +17,6 @@ const CatalogItem = ({ advert }) => {
   };
 
   const {
-    // id,
     make,
     model,
     year,
@@ -22,17 +28,29 @@ const CatalogItem = ({ advert }) => {
     mileage,
     functionalities,
   } = advert;
+
+  const shortAdress = address.split(" ");
+
   return (
     <>
       <CarCardStyled>
-        <div>
+        <div className="img-box">
           <img src={img} alt={make} className="card-image" />
-          {/* <button>
-          <svg className="icon-heart" width="16px" height="16px">
-            <use href="icon-heart"></use>
-          </svg>
-        </button> */}
-
+          {!isFavorite ? (
+            <button
+              className="button-heart"
+              onClick={() => addFavorite(advert.id)}
+            >
+              <Icon className="icon-heart" id="heart" />
+            </button>
+          ) : (
+            <button
+              className="button-heart"
+              onClick={() => removeFavorite(advert.id)}
+            >
+              <Icon className="favorite" id="heart" />
+            </button>
+          )}
           <div className="car-info">
             <h2>
               {make}
@@ -46,7 +64,10 @@ const CatalogItem = ({ advert }) => {
           </div>
           <div className="car-details">
             <p>
-              {address.split(" ").slice(-2).join(" ").replace(",", " |")}
+              {/* {address.split(" ").slice(-2).join(" ").replace(",", " |")} */}
+              {shortAdress[0]}
+              <span className="span-line"> | </span>
+              {shortAdress[1]}
               <span className="span-line"> | </span>
               {rentalCompany}
             </p>

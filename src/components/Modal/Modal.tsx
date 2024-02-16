@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { OverlayStyled } from "./Modal.styled";
+import Icon from "../Icons1";
 
 const Modal = ({ open, closeModal, advert }) => {
   if (!open) {
@@ -49,11 +50,15 @@ const Modal = ({ open, closeModal, advert }) => {
     mileage,
   } = advert;
 
+  const shortAdress = address.split(" ");
+  const rentalCond = rentalConditions.split("\n");
+  const firsCond = rentalCond[0].split(":");
+
   return (
     <OverlayStyled onClick={handleBackdropClick}>
       <div className="modal-container">
-        <button onClick={closeModal} className="button-close">
-          Close
+        <button onClick={closeModal}>
+          <Icon className="icon-close" id="cross" />
         </button>
         <img src={img} alt={make} className="modal-image" />
 
@@ -67,7 +72,9 @@ const Modal = ({ open, closeModal, advert }) => {
 
         <div className="modal-car-details ">
           <p>
-            {address.split(" ").slice(-2).join(" ").replace(",", " |")}
+            {shortAdress[0]}
+            <span className="span-line"> | </span>
+            {shortAdress[1]}
             <span className="span-line"> | </span>
             Id: {id}
             <span className="span-line"> | </span>
@@ -92,26 +99,11 @@ const Modal = ({ open, closeModal, advert }) => {
         <h3 className="rental-cond-title">Rental Conditions:</h3>
 
         <div className="rental-cond-box">
-          {rentalConditions &&
-            rentalConditions.split("\n").map((condition, index) => {
-              const parts = condition.split(":");
-              const label = parts[0].trim();
-              const value = parts.length > 1 ? parts[1].trim() : "";
-
-              return (
-                <p key={index} className="condition">
-                  {index === 0 ? `${label}: ` : label}
-                  {index === 0 ? (
-                    <span className="special">{value}</span>
-                  ) : (
-                    value
-                  )}
-                </p>
-              );
-            })}
-          {/* <p className="condition"> {rentalConditions.split("\n")}</p> */}
-          {/* <p className="condition"> {rentalConditions.slice(1, 2)}</p>
-          <p className="condition"> {rentalConditions.slice(2, 3)}</p> */}
+          <p className="condition">
+            {firsCond[0]}: <span className="special">{firsCond[1]}</span>
+          </p>
+          <p className="condition"> {rentalCond[1]}</p>
+          <p className="condition"> {rentalCond[2]}</p>
           <p className="condition">
             Mileage:{" "}
             <span className="span-numbers">
