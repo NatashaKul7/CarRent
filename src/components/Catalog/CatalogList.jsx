@@ -1,20 +1,20 @@
 import { useSelector } from "react-redux";
 import { getAdverts } from "../../redux/adverts/selectors";
 import CatalogItem from "./CatalogItem/CatalogItem";
+import { CarBoxStyled } from "./CatalogList.styled";
 
 const CatalogList = () => {
   const adverts = useSelector(getAdverts);
 
-  console.log(adverts);
   return (
-    <div>
-      <p>Catalog</p>
-      <ul>
+    <CarBoxStyled>
+      <ul className="card-list">
         {adverts?.map((advert) => (
-          <CatalogItem key={advert.id} advert={advert} />
+          <CatalogItem key={advert.id} id={advert.id} advert={advert} />
         ))}
       </ul>
-    </div>
+      <button className="button-load-more">Load more</button>
+    </CarBoxStyled>
   );
 };
 

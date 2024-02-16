@@ -7,14 +7,29 @@ export const HeaderStyled = styled.header`
   left: 0; */
   /* width: 100%; */
 
-  display: flex;
-  justify-content: space-between;
+  background-color: var(--bg-blue);
+  color: var(--primary-white);
+  margin-bottom: 24px;
 
-  background-color: #3470ff;
-  color: #ffffff;
-  margin: 0;
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 24px;
+
+    font-size: 16px;
+    font-weight: var(--medium-font-weight);
+  }
+
+  .header-info {
+    display: flex;
+    gap: 24px;
+  }
 `;
 
-export const NavigationStyled = styled(NavLink)`
-  color: #ffffff;
+export const NavLinkStyled = styled(NavLink)`
+  &.active {
+    font-weight: var(--bold-font-weight);
+    color: #000080;
+    text-decoration: underline;
+  }
 `;
