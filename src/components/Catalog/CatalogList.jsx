@@ -3,15 +3,14 @@ import { getAdverts } from "../../redux/adverts/selectors";
 import CatalogItem from "./CatalogItem/CatalogItem";
 import { CarBoxStyled } from "./CatalogList.styled";
 import { useEffect, useState } from "react";
-// import { addFavorite, removeFavorite } from "../utils/favorite";
 
 const CatalogList = () => {
   const adverts = useSelector(getAdverts);
   const [data, setNewData] = useState([]);
-
   const [favorite, setFavorite] = useState(
     () => JSON.parse(localStorage.getItem("favorite")) ?? []
   );
+
   const isFavorite = (id) => favorite.some((item) => item.id === id);
 
   useEffect(() => {
@@ -37,22 +36,21 @@ const CatalogList = () => {
     );
   };
 
-  // for loadMore
-  // const [newAdverts, setNewAdverts] = useState([]);
-
   return (
-    <CarBoxStyled>
-      {data?.map((advert) => (
-        <CatalogItem
-          key={advert.id}
-          advert={advert}
-          addFavorite={addFavorite}
-          setFavorite={setFavorite}
-          isFavorite={isFavorite(advert.id)}
-          removeFavorite={removeFavorite}
-        />
-      ))}
-    </CarBoxStyled>
+    <>
+      <CarBoxStyled>
+        {data?.map((advert) => (
+          <CatalogItem
+            key={advert.id}
+            advert={advert}
+            addFavorite={addFavorite}
+            setFavorite={setFavorite}
+            isFavorite={isFavorite(advert.id)}
+            removeFavorite={removeFavorite}
+          />
+        ))}
+      </CarBoxStyled>
+    </>
   );
 };
 

@@ -44,9 +44,16 @@
     cursor: none;
 }
 
+
+body.active-modal {
+  overflow: hidden;
+}
+
+
   button {
   color: var(--primary-white);
   background-color: var(--bg-blue);
+      cursor: pointer;
    }
  
 

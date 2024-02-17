@@ -3,7 +3,7 @@ import { requestAdverts } from "./operations";
 
 const INITIAL_STATE = {
   adverts: [],
-  filter: "",
+  filter: [],
   isLoading: false,
   isError: null,
 };
@@ -11,13 +11,26 @@ const INITIAL_STATE = {
 const advertsSlice = createSlice({
   name: "adverts",
   initialState: INITIAL_STATE,
-  reducers: {},
+  reducers: {
+    filterAdverts(state, action) {
+      state.filter = action.payload;
+    },
+  },
   extraReducers: (builder) => {
-    builder.addCase(requestAdverts.fulfilled, (state, action) => {
-      state.isLoading = false;
-      state.adverts = action.payload;
-    });
+    builder
+      .addCase(requestAdverts.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.adverts = action.payload;
+      })
+      .addCase(requestAdverts.pending, (state) => {
+        state.adverts.isLoading = true;
+      })
+      .addCase(requestAdverts.rejected, (state, action) => {
+        state.adverts.isLoading = true;
+        state.isError = action.error;
+      });
   },
 });
 
 export const advertsReducer = advertsSlice.reducer;
+export const { filterAdverts } = advertsSlice.actions;

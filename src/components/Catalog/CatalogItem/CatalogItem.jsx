@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CarCardStyled } from "./CatalogItem.styled";
 import Modal from "../../Modal/Modal";
-import Icon from "../../Icons1";
+import Icon from "../../Icon";
 
 const CatalogItem = ({ advert, addFavorite, removeFavorite, isFavorite }) => {
   const [openModal, setOpenModal] = useState(false);
@@ -9,6 +9,17 @@ const CatalogItem = ({ advert, addFavorite, removeFavorite, isFavorite }) => {
   const closeModal = () => {
     setOpenModal(false);
   };
+
+  // const onOpenModal = () => {
+  //   setOpenModal(true);
+  //   document.body.style.overflow = "hidden";
+  // };
+
+  // const closeModal = () => {
+  //   setOpenModal(false);
+
+  //   document.body.style.overflow = "unset";
+  // };
 
   const {
     make,

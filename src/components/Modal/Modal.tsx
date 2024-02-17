@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { OverlayStyled } from "./Modal.styled";
-import Icon from "../Icons1";
+import Icon from "../Icon";
 
 const Modal = ({ open, closeModal, advert }) => {
   if (!open) {
@@ -25,11 +25,11 @@ const Modal = ({ open, closeModal, advert }) => {
     }
   };
 
-  //   if (open) {
-  //     document.body.classList.add("active-modal");
-  //   } else {
-  //     document.body.classList.remove("active-modal");
-  //   }
+  if (open) {
+    document.body.classList.add("active-modal");
+  } else {
+    document.body.classList.remove("active-modal");
+  }
 
   const {
     id,
