@@ -88,8 +88,8 @@ const CatalogList = ({ selectedCar }) => {
             removeFavorite={removeFavorite}
           />
         ))}
+        {hasMore && <LoadMore onLoadMore={onLoadMore} />}
       </CarBoxStyled>
-      {hasMore && <LoadMore onLoadMore={onLoadMore} />}
     </>
   );
 };
