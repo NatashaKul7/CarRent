@@ -1,4 +1,4 @@
-import{u as t,j as e,N as o}from"./index-Bd6tV8Nd.js";const i="/CarRent/car.png",r=t.section`
+import{u as t,j as e,N as o}from"./index-11Z12L4E.js";const i="/CarRent/car.png",r=t.section`
   display: flex;
   flex-direction: column;
   align-items: center;
