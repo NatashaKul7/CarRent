@@ -20,7 +20,6 @@ const SharedLayout = () => {
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
-      {/* <main>{<Outlet />}</main> */}
     </div>
   );
 };

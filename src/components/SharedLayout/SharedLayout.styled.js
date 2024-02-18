@@ -5,11 +5,11 @@ export const HeaderStyled = styled.header`
   /* position: fixed;
   top: 0;
   left: 0; */
-  /* width: 100%; */
+  width: 100%;
 
   background-color: var(--bg-blue);
   color: var(--primary-white);
-  margin-bottom: 24px;
+  /* margin-top: 24px; */
 
   .navigation {
     display: flex;
