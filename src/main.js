@@ -7,26 +7,6 @@ import "./index.css";
 
 export const GlobalStyle = createGlobalStyle`
 :root {
-/* FONTS */
-     --font-size: 12px;
-     --line-height: 1.5;
-     --main-font-regular:400;
-     --main-font-medium: 500;
-     --main-font-emi: 600;
-
-
-     @font-face {
-         font-family: 'Manrope-SemiBold', sans-serif;
-         src: url(${Regular}) format('truetype');
-     }
-     @font-face {
-         font-family: 'Manrope-Medium', sans-serif;
-         src: url(${Medium}) format('truetype');
-     }
-     @font-face {
-         font-family: 'Manrope-Regular', sans-serif;
-         src: url(${SemiBold}) format('truetype');
-     }
 
        /* FONTS */
   --standard-font-size: 12px;
@@ -57,6 +37,21 @@ export const GlobalStyle = createGlobalStyle`
   --btn-box-shadow: 0 4px 8px #3470ff;
   --btn-box-shadow-hover: 0 4px 14px #3470ff;
 }
+
+
+     @font-face {
+         font-family: 'Manrope-SemiBold', sans-serif;
+         src: url(${Regular}) format('truetype');
+     }
+     @font-face {
+         font-family: 'Manrope-Medium', sans-serif;
+         src: url(${Medium}) format('truetype');
+     }
+     @font-face {
+         font-family: 'Manrope-Regular', sans-serif;
+         src: url(${SemiBold}) format('truetype');
+     }
+
 
   body {
     overflow-x: hidden;

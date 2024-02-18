@@ -2,6 +2,7 @@ import Select from "react-select";
 import { SearchStyled } from "./Search.styled";
 import { useState } from "react";
 import { carModels } from "../utils/models";
+import { toast } from "react-toastify";
 
 const Search = ({ onSearch }) => {
   const [selectedCar, setSelectedCar] = useState(null);
@@ -11,6 +12,10 @@ const Search = ({ onSearch }) => {
   };
 
   const handleSearch = () => {
+    if (!selectedCar) {
+      toast.error("Please select a model");
+      return;
+    }
     onSearch(selectedCar);
   };
 

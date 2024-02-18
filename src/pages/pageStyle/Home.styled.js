@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import BgImage from "/car.png";
+
+// import BgImage from "/car.png";
+import BgImg from "../../../public/white.jpg";
 
 export const HomeWrapperStyled = styled.section`
   display: flex;
@@ -10,7 +12,7 @@ export const HomeWrapperStyled = styled.section`
 
   height: auto;
 
-  background-image: url(${BgImage});
+  background-image: url(${BgImg});
   background-color: #000000;
   background-size: cover;
   background-repeat: no-repeat;
@@ -30,7 +32,7 @@ export const HomeWrapperStyled = styled.section`
 
     text-align: center;
     font-weight: var(--medium-font-weight);
-    color: var(--primary-white);
+    color: var(--primary-blue);
     margin-bottom: 24px;
   }
 
@@ -39,7 +41,7 @@ export const HomeWrapperStyled = styled.section`
     margin-bottom: 12px;
 
     max-width: 700px;
-    background-color: RGBA(52, 112, 255, 0.5);
+    background-color: RGBA(52, 112, 255, 0.8);
     color: var(--primary-white);
     border-radius: 14px;
 
@@ -110,7 +112,7 @@ export const HomeWrapperStyled = styled.section`
   @media (min-width: 1440px) {
     h1 {
       font-size: 48px;
-      margin-top: 70px;
+      margin-top: 50px;
     }
 
     h2 {
