@@ -15,8 +15,9 @@ export const OverlayStyled = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
 
-    max-width: 541px;
-    padding: 40px;
+    max-height: 600px;
+    max-width: 300px;
+    padding: 20px;
     background-color: var(--primary-white);
     border-radius: 24px;
   }
@@ -37,8 +38,8 @@ export const OverlayStyled = styled.div`
   .modal-image {
     margin-bottom: 14px;
 
-    width: 461px;
-    height: 268px;
+    width: 240px;
+    height: 240px;
     border-radius: 14px;
     background-color: #f3f3f2;
 
@@ -119,6 +120,31 @@ export const OverlayStyled = styled.div`
     background-color: var(--bg-blue);
   }
 
+  @media (min-width: 768px) {
+    .modal-container {
+      max-width: 541px;
+      max-height: 100%;
+      padding: 40px;
+    }
+
+    .modal-image {
+      width: 300px;
+      height: 230px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .modal-container {
+      max-width: 541px;
+      max-height: 100%;
+      padding: 40px;
+    }
+
+    .modal-image {
+      width: 461px;
+      height: 268px;
+    }
+  }
   /* body.active-modal {
     overflow-y: hidden;
   } */

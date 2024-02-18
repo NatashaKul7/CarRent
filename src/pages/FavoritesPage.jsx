@@ -1,9 +1,14 @@
+import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import CatalogItem from "../components/Catalog/CatalogItem/CatalogItem";
 import { CarBoxStyled } from "../components/Catalog/CatalogList.styled";
 import Search from "../components/Search/Search";
+import { getIsError, getIsLoading } from "../redux/adverts/selectors";
+import Loader from "../components/Loader/Loader";
 
 const FavoritesPage = () => {
+  const isLoading = useSelector(getIsLoading);
+  const isError = useSelector(getIsError);
   const [favorite, setFavorite] = useState(
     () => JSON.parse(localStorage.getItem("favorite")) ?? []
   );
@@ -22,6 +27,8 @@ const FavoritesPage = () => {
 
   return (
     <div className="container">
+      {isError && <div>Error</div>}
+      {isLoading && <Loader />}
       <Search />
       <CarBoxStyled>
         {favorite.map((advert) => (

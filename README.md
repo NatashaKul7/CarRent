@@ -1,6 +1,6 @@
 # Car Rental
 
-You can visit the project **_[here](natashakul7.github.io/CarRent/)_** or in About section
+You can visit the project **_[here](https://natashakul7.github.io/CarRent/)_** or in About section
 
 A project for car rental, developed using React.js. It allows users to browse available cars, select a suitable one, and upon clicking the "rent car" button, connect via phone call with the car rental service.
 

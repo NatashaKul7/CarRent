@@ -90,6 +90,7 @@ const CatalogList = ({ selectedCar }) => {
           />
         ))}
       </CarBoxStyled>
+
       {hasMore && <LoadMore onLoadMore={onLoadMore} />}
     </>
   );

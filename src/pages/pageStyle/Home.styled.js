@@ -1,6 +1,4 @@
 import styled from "styled-components";
-
-// import BgImage from "/car.png";
 import BgImg from "../../../public/white.jpg";
 
 export const HomeWrapperStyled = styled.section`
@@ -13,7 +11,7 @@ export const HomeWrapperStyled = styled.section`
   height: auto;
 
   background-image: url(${BgImg});
-  background-color: #000000;
+  background-color: var(--primary-blue);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

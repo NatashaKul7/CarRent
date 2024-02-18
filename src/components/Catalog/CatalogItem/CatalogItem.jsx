@@ -10,17 +10,6 @@ const CatalogItem = ({ advert, addFavorite, removeFavorite, isFavorite }) => {
     setOpenModal(false);
   };
 
-  // const onOpenModal = () => {
-  //   setOpenModal(true);
-  //   document.body.style.overflow = "hidden";
-  // };
-
-  // const closeModal = () => {
-  //   setOpenModal(false);
-
-  //   document.body.style.overflow = "unset";
-  // };
-
   const {
     make,
     model,
@@ -74,6 +63,8 @@ const CatalogItem = ({ advert, addFavorite, removeFavorite, isFavorite }) => {
               {shortAdress[4]}
               <span className="span-line"> | </span>
               {rentalCompany}
+              <span className="span-line"> | </span>
+              Premium
             </p>
             <p>
               {type}

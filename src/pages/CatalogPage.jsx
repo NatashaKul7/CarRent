@@ -18,9 +18,9 @@ const CatalogPage = () => {
   return (
     <ContainerStyled className="container">
       {isError && <div>Error</div>}
+      {isLoading && <Loader />}
       <Search onSearch={handleSearch} />
       <CatalogList selectedCar={selectedCar} />
-      {isLoading && <Loader />}
     </ContainerStyled>
   );
 };
