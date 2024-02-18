@@ -20,12 +20,16 @@ const CatalogList = ({ selectedCar }) => {
   const isFavorite = (id) => favorite.some((item) => item.id === id);
 
   useEffect(() => {
-    if (adverts.length === 0) {
+    if (adverts.length === 0 || selectedCar) {
       setHasMore(false);
     } else {
       setHasMore(true);
     }
-  }, [adverts]);
+
+    if (selectedCar === "All") {
+      setHasMore(true);
+    }
+  }, [adverts, selectedCar]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -85,8 +89,8 @@ const CatalogList = ({ selectedCar }) => {
             removeFavorite={removeFavorite}
           />
         ))}
-        {hasMore && <LoadMore onLoadMore={onLoadMore} />}
       </CarBoxStyled>
+      {hasMore && <LoadMore onLoadMore={onLoadMore} />}
     </>
   );
 };

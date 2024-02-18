@@ -26,6 +26,7 @@ const Search = ({ onSearch }) => {
             control: (baseStyles) => ({
               ...baseStyles,
               height: "44px",
+              width: "224px",
               borderRadius: "14px",
               color: "121417",
               backgroundColor: "#f7f7fb",
@@ -48,9 +49,13 @@ const Search = ({ onSearch }) => {
               display: "none",
               color: "#121417",
             }),
-            dropdownIndicator: (baseStyles) => ({
-              ...baseStyles,
+            dropdownIndicator: (provided, state) => ({
+              ...provided,
               color: "#121417",
+              transform: state.selectProps.menuIsOpen
+                ? "rotate(180deg)"
+                : "rotate(0deg)",
+              transition: "transform 0.3s ease",
             }),
             placeholder: (baseStyles) => ({
               ...baseStyles,
