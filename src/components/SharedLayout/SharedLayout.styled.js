@@ -23,6 +23,7 @@ export const HeaderStyled = styled.header`
 `;
 
 export const NavLinkStyled = styled(NavLink)`
+  cursor: pointer;
   &.active {
     font-weight: var(--bold-font-weight);
     color: #000080;

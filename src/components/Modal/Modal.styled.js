@@ -35,6 +35,7 @@ export const OverlayStyled = styled.div`
     right: 16px;
 
     stroke: var(--primary-black);
+    cursor: pointer;
   }
   .icon-close:hover {
     stroke: var(--primary-blue);
@@ -123,6 +124,7 @@ export const OverlayStyled = styled.div`
     padding: 12px, 50px;
     color: var(--primary-white);
     background-color: var(--bg-blue);
+    cursor: pointer;
   }
 
   @media (min-width: 768px) {

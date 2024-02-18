@@ -53,7 +53,7 @@ const Modal = ({ open, closeModal, advert }) => {
     <OverlayStyled onClick={handleBackdropClick}>
       <div className="modal-container">
         <div>
-          <button onClick={closeModal}>
+          <button onClick={closeModal} className="close-button">
             <Icon className="icon-close" id="cross" />
           </button>
           <img src={img} alt={make} className="modal-image" />

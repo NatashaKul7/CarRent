@@ -104,6 +104,7 @@ export const HomeWrapperStyled = styled.section`
     .button-rent {
       padding: 14px 32px;
       font-size: 18px;
+      cursor: pointer;
     }
   }
 
