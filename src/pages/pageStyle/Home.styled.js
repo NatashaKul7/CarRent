@@ -1,12 +1,19 @@
 import styled from "styled-components";
+import BgImage from "/car.png";
 
 export const HomeWrapperStyled = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   margin-top: 50px;
   gap: 12px;
+
+  height: 100vh;
+  background-image: url(${BgImage});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
   h1 {
     font-size: 36px;
@@ -32,11 +39,11 @@ export const HomeWrapperStyled = styled.section`
     background-color: var(--hover-blue);
     box-shadow: var(--btn-box-shadow);
   }
-  /* 
+
   .background {
-    background-image: url("../../assets/img/car.png");
+    background-image: url(${BgImage});
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
-  } */
+    background-position: center;
+  }
 `;

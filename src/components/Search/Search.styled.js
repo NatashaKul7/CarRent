@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
 export const SearchStyled = styled.div`
-  /* max-width: 500px; */
-  /* height: 100px; */
-
   height: auto;
   background-color: var(--bg-blue);
   border-radius: 14px;
@@ -22,7 +19,6 @@ export const SearchStyled = styled.div`
 
     font-size: 14px;
     color: var(--bg-blue);
-    /* color: var(--primary-white); */
     background-color: var(--primary-white);
   }
 

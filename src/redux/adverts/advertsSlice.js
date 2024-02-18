@@ -3,7 +3,7 @@ import { requestAdverts } from "./operations";
 
 const INITIAL_STATE = {
   adverts: [],
-  filter: [],
+  // filter: [],
   isLoading: false,
   isError: null,
 };
@@ -12,9 +12,9 @@ const advertsSlice = createSlice({
   name: "adverts",
   initialState: INITIAL_STATE,
   reducers: {
-    filterAdverts(state, action) {
-      state.filter = action.payload;
-    },
+    // filterAdverts(state, action) {
+    //   state.filter = action.payload;
+    // },
   },
   extraReducers: (builder) => {
     builder
@@ -23,10 +23,10 @@ const advertsSlice = createSlice({
         state.adverts = action.payload;
       })
       .addCase(requestAdverts.pending, (state) => {
-        state.adverts.isLoading = true;
+        state.isLoading = true;
       })
       .addCase(requestAdverts.rejected, (state, action) => {
-        state.adverts.isLoading = true;
+        state.isLoading = true;
         state.isError = action.error;
       });
   },

@@ -1,23 +1,51 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { getAdverts } from "../../redux/adverts/selectors";
 import CatalogItem from "./CatalogItem/CatalogItem";
 import { CarBoxStyled } from "./CatalogList.styled";
 import { useEffect, useState } from "react";
+import LoadMore from "../LoadMore/LoadMore";
+import { requestAdverts } from "../../redux/adverts/operations";
 
-const CatalogList = () => {
+const CatalogList = ({ selectedCar }) => {
   const adverts = useSelector(getAdverts);
-  const [data, setNewData] = useState([]);
+  const [displayedAdverts, setDisplayedAdverts] = useState([]);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
   const [favorite, setFavorite] = useState(
     () => JSON.parse(localStorage.getItem("favorite")) ?? []
   );
 
+  const dispatch = useDispatch();
+
   const isFavorite = (id) => favorite.some((item) => item.id === id);
 
   useEffect(() => {
-    if (adverts) {
-      setNewData((prev) => [...prev, ...adverts]);
+    if (adverts.length === 0) {
+      setHasMore(false);
+    } else {
+      setHasMore(true);
     }
   }, [adverts]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await dispatch(
+        requestAdverts({
+          page,
+          selectedCar: selectedCar === "All" ? "" : selectedCar,
+        })
+      )
+        .unwrap()
+        .then((data) => {
+          if (selectedCar) {
+            setDisplayedAdverts([]);
+          }
+          setDisplayedAdverts((prevAdverts) => [...prevAdverts, ...data]);
+        });
+    };
+
+    fetchData();
+  }, [dispatch, page, selectedCar]);
 
   useEffect(() => {
     localStorage.setItem("favorite", JSON.stringify(favorite));
@@ -36,10 +64,21 @@ const CatalogList = () => {
     );
   };
 
+  // const onLoadMore = () => {
+  //   dispatch(requestAdverts(page + 1));
+  //   setPage((prevPage) => prevPage + 1);
+  // };
+
+  const onLoadMore = () => {
+    // Додаємо нові карточки до вже існуючих
+    dispatch(requestAdverts(page + 1));
+    setPage((prevPage) => prevPage + 1);
+  };
+
   return (
     <>
       <CarBoxStyled>
-        {data?.map((advert) => (
+        {displayedAdverts.map((advert) => (
           <CatalogItem
             key={advert.id}
             advert={advert}
@@ -50,6 +89,7 @@ const CatalogList = () => {
           />
         ))}
       </CarBoxStyled>
+      {hasMore && <LoadMore onLoadMore={onLoadMore} />}
     </>
   );
 };
