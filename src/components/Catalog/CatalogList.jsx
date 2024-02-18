@@ -64,17 +64,14 @@ const CatalogList = ({ selectedCar }) => {
     );
   };
 
-  // const onLoadMore = () => {
-  //   dispatch(requestAdverts(page + 1));
-  //   setPage((prevPage) => prevPage + 1);
-  // };
-
-  const onLoadMore = () => {
-    // Додаємо нові карточки до вже існуючих
-    dispatch(requestAdverts(page + 1));
-    setPage((prevPage) => prevPage + 1);
+  const onLoadMore = async () => {
+    await dispatch(requestAdverts(page + 1))
+      .unwrap()
+      .then((data) => {
+        setDisplayedAdverts((prevAdverts) => [...prevAdverts, ...data]);
+        setPage((prevPage) => prevPage + 1);
+      });
   };
-
   return (
     <>
       <CarBoxStyled>
