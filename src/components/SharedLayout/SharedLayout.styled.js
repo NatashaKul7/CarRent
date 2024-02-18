@@ -2,14 +2,10 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderStyled = styled.header`
-  /* position: fixed;
-  top: 0;
-  left: 0; */
-  width: 100%;
-
   background-color: var(--bg-blue);
   color: var(--primary-white);
-  /* margin-top: 24px; */
+  border-radius: 0px 0px 14px 14px;
+  box-shadow: var(--btn-box-shadow);
 
   .navigation {
     display: flex;

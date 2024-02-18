@@ -6,4 +6,10 @@ export const LoadMoreBtnStyled = styled.button`
   color: var(--primary-blue);
   text-decoration: underline;
   background-color: transparent;
+  cursor: pointer;
+
+  &:hover,
+  :focus {
+    color: var(--hover-blue);
+  }
 `;

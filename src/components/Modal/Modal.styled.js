@@ -10,6 +10,10 @@ export const OverlayStyled = styled.div`
   height: 100%;
 
   .modal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     position: fixed;
     top: 50%;
     left: 50%;
@@ -20,6 +24,7 @@ export const OverlayStyled = styled.div`
     padding: 20px;
     background-color: var(--primary-white);
     border-radius: 24px;
+    overflow-y: auto;
   }
 
   .icon-close {
@@ -125,10 +130,12 @@ export const OverlayStyled = styled.div`
       max-width: 541px;
       max-height: 100%;
       padding: 40px;
+
+      align-items: start;
     }
 
     .modal-image {
-      width: 300px;
+      width: 100%;
       height: 230px;
     }
   }

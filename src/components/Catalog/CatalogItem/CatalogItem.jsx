@@ -8,6 +8,12 @@ const CatalogItem = ({ advert, addFavorite, removeFavorite, isFavorite }) => {
 
   const closeModal = () => {
     setOpenModal(false);
+    document.body.style.overflow = "auto";
+  };
+
+  const onOpenModal = () => {
+    setOpenModal(true);
+    document.body.style.overflow = "hidden";
   };
 
   const {
@@ -78,7 +84,7 @@ const CatalogItem = ({ advert, addFavorite, removeFavorite, isFavorite }) => {
           </div>
         </div>
 
-        <button className="button-card" onClick={() => setOpenModal(true)}>
+        <button className="button-card" onClick={onOpenModal}>
           Learn more
         </button>
         <Modal open={openModal} closeModal={closeModal} advert={advert} />

@@ -43,8 +43,8 @@ const Search = ({ onSearch }) => {
             }),
             menu: (baseStyles) => ({
               ...baseStyles,
-              height: "150px",
-              overflowY: "hidden",
+              maxHeight: "300px",
+              overflowY: "auto",
               backgroundColor: "#D7E3FF",
               color: "#3470ff",
               borderRadius: "14px",
