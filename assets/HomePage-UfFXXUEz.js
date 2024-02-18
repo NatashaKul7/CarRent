@@ -1,4 +1,4 @@
-import{u as t,j as e,N as o}from"./index-BzRSrW9a.js";const i="/CarRent/assets/white-D-sGmAAp.jpg",r=t.section`
+import{u as i,a as o,j as e,L as n,N as a}from"./index-BYipWedC.js";import{g as s,a as p}from"./selectors-w-DAqvTx.js";const l="/CarRent/assets/white-D-sGmAAp.jpg",c=i.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,8 +7,8 @@ import{u as t,j as e,N as o}from"./index-BzRSrW9a.js";const i="/CarRent/assets/w
 
   height: auto;
 
-  background-image: url(${i});
-  background-color: #000000;
+  background-image: url(${l});
+  background-color: var(--primary-blue);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -131,4 +131,4 @@ import{u as t,j as e,N as o}from"./index-BzRSrW9a.js";const i="/CarRent/assets/w
       }
     }
   }
-`,a=()=>e.jsxs(r,{className:"home-page",children:[e.jsx("h1",{className:"home-title",children:"Welcome to our car rental service!"}),e.jsx("h2",{children:"We offer a convenient and reliable way to access cars for your travels or business"}),e.jsxs("div",{className:"home-description",children:[e.jsx("p",{children:" Our service works quickly and efficiently:"}),e.jsxs("ul",{children:[e.jsx("li",{children:"Choose a car"}),e.jsx("li",{children:"Reserve it online"}),e.jsx("li",{children:"Get the keys"})]}),e.jsx("p",{children:"We strive to make your journey as comfortable as possible, providing you with access to a wide selection of cars at affordable prices."}),e.jsx("p",{children:"Trust us with your car rental needs, and we will do everything possible to ensure you have a safe and convenient trip."})]}),e.jsx(o,{to:"/catalog",className:"button-rent",children:"Rent car"})]});export{a as default};
+`,x=()=>{const t=o(s),r=o(p);return e.jsxs(e.Fragment,{children:[r&&e.jsx("div",{children:"Error"}),t&&e.jsx(n,{}),e.jsxs(c,{className:"home-page",children:[e.jsx("h1",{className:"home-title",children:"Welcome to our car rental service!"}),e.jsx("h2",{children:"We offer a convenient and reliable way to access cars for your travels or business"}),e.jsxs("div",{className:"home-description",children:[e.jsx("p",{children:" Our service works quickly and efficiently:"}),e.jsxs("ul",{children:[e.jsx("li",{children:"Choose a car"}),e.jsx("li",{children:"Reserve it online"}),e.jsx("li",{children:"Get the keys"})]}),e.jsx("p",{children:"We strive to make your journey as comfortable as possible, providing you with access to a wide selection of cars at affordable prices."}),e.jsx("p",{children:"Trust us with your car rental needs, and we will do everything possible to ensure you have a safe and convenient trip."})]}),e.jsx(a,{to:"/catalog",className:"button-rent",children:"Rent car"})]})]})};export{x as default};
