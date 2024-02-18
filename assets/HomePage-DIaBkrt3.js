@@ -1,10 +1,16 @@
-import{u as r,j as e,N as o}from"./index-DcmEWSRS.js";const a=r.section`
+import{u as o,j as e,N as a}from"./index-D1clQPHM.js";const r="/CarRent/car.png",n=o.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   margin-top: 50px;
   gap: 12px;
+
+  height: 100vh;
+  background-image: url(${r});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
   h1 {
     font-size: 36px;
@@ -30,11 +36,11 @@ import{u as r,j as e,N as o}from"./index-DcmEWSRS.js";const a=r.section`
     background-color: var(--hover-blue);
     box-shadow: var(--btn-box-shadow);
   }
-  /* 
+
   .background {
-    background-image: url("../../assets/img/car.png");
+    background-image: url(${r});
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
-  } */
-`,n=()=>e.jsxs(a,{className:"background",children:[e.jsx("h1",{children:"Welcome to the car rent service"}),e.jsx("h2",{children:"Here you can find a car for any occasions"}),e.jsx(o,{to:"/catalog",className:"button-rent",children:"Rent car"})]});export{n as default};
+    background-position: center;
+  }
+`,c=()=>e.jsxs(n,{className:"home-page",children:[e.jsx("h1",{children:"Welcome to the car rent service"}),e.jsx("h2",{children:"Here you can find a car for any occasions"}),e.jsx(a,{to:"/catalog",className:"button-rent",children:"Rent car"})]});export{c as default};
