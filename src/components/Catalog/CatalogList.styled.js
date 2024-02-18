@@ -7,5 +7,4 @@ export const CarBoxStyled = styled.ul`
   grid-gap: 50px 29px;
 
   margin-bottom: 100px;
-  /* } */
 `;

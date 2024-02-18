@@ -25,11 +25,11 @@ const Modal = ({ open, closeModal, advert }) => {
     }
   };
 
-  if (open) {
-    document.body.classList.add("active-modal");
-  } else {
-    document.body.classList.remove("active-modal");
-  }
+  // if (open) {
+  //   document.body.classList.add("active-modal");
+  // } else {
+  //   document.body.classList.remove("active-modal");
+  // }
 
   const {
     id,
