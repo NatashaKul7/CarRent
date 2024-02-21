@@ -29,4 +29,13 @@ export const NavLinkStyled = styled(NavLink)`
     color: #000080;
     text-decoration: underline;
   }
+  &.active:hover,
+  &.active:focus {
+    color: var(--primary-white);
+  }
+  &:hover,
+  &:focus {
+    color: var(--btn-box-shadow-hover);
+    color: #000080;
+  }
 `;

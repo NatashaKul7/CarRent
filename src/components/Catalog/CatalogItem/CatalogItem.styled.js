@@ -28,7 +28,6 @@ export const CarCardStyled = styled.li`
     background-color: transparent;
     top: 14px;
     right: 14px;
-    cursor: pointer;
   }
 
   .icon-heart {
@@ -37,6 +36,7 @@ export const CarCardStyled = styled.li`
     fill: none;
     stroke: var(--primary-white);
   }
+
   .favorite {
     width: 18px;
     height: 18px;
@@ -66,7 +66,6 @@ export const CarCardStyled = styled.li`
     display: flex;
     flex-direction: column;
     gap: 4px;
-    /* margin-bottom: 28px; */
 
     color: var(--primary-grey);
   }
@@ -83,7 +82,6 @@ export const CarCardStyled = styled.li`
     align-items: center;
 
     width: 100%;
-    /* height: auto; */
     padding-top: 12px;
     padding-bottom: 12px;
 
@@ -93,10 +91,10 @@ export const CarCardStyled = styled.li`
     color: var(--primary-white);
     background-color: var(--bg-blue);
     border-radius: 12px;
-    cursor: pointer;
   }
 
-  .button-card:hover {
+  .button-card:hover,
+  .button-card:focus {
     background-color: var(--hover-blue);
     box-shadow: var(--btn-box-shadow);
   }

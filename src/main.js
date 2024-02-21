@@ -72,14 +72,25 @@ body.active-modal {
   overflow: hidden;
 }
 
-
-  button {
+button {
   color: var(--primary-white);
   background-color: var(--bg-blue);
       cursor: pointer;
-   }
+}
  
+button:hover {
+  transition: all 0.5s ease-out;
+  cursor: pointer;
+}
 
+a {
+  cursor: pointer;
+  }
+
+a:hover {
+      transition: all 0.5s ease-out;
+  }
+   
    .container {
   margin: 0 auto; 
   max-width: 274px;

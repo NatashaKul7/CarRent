@@ -35,9 +35,10 @@ export const OverlayStyled = styled.div`
     right: 16px;
 
     stroke: var(--primary-black);
-    cursor: pointer;
   }
-  .icon-close:hover {
+
+  .icon-close:hover,
+  .icon-close:focus {
     stroke: var(--primary-blue);
   }
 
@@ -124,7 +125,11 @@ export const OverlayStyled = styled.div`
     padding: 12px, 50px;
     color: var(--primary-white);
     background-color: var(--bg-blue);
-    cursor: pointer;
+  }
+  .rental-button:hover,
+  .rental-button:focus {
+    background-color: var(--hover-blue);
+    box-shadow: var(--btn-box-shadow);
   }
 
   @media (min-width: 768px) {
@@ -154,7 +159,4 @@ export const OverlayStyled = styled.div`
       height: 268px;
     }
   }
-  /* body.active-modal {
-    overflow-y: hidden;
-  } */
 `;

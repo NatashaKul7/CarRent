@@ -22,10 +22,10 @@ export const SearchStyled = styled.div`
     font-size: 14px;
     color: var(--primary-white);
     background-color: var(--bg-blue);
-    cursor: pointer;
   }
 
-  .button-search:hover {
+  .button-search:hover,
+  .button-search:focus {
     color: var(--primary-white);
     background-color: var(--hover-blue);
     box-shadow: var(--btn-box-shadow);

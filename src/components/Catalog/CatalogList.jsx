@@ -14,6 +14,7 @@ const CatalogList = ({ selectedCar }) => {
   const [favorite, setFavorite] = useState(
     () => JSON.parse(localStorage.getItem("favorite")) ?? []
   );
+  const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -31,8 +32,30 @@ const CatalogList = ({ selectedCar }) => {
     }
   }, [adverts, selectedCar]);
 
+  ///
+  //  useEffect(() => {
+  //    const fetchData = async () => {
+  //      await dispatch(
+  //        requestAdverts({
+  //          page,
+  //          selectedCar: selectedCar === "All" ? "" : selectedCar,
+  //        })
+  //      )
+  //        .unwrap()
+  //        .then((data) => {
+  //          if (selectedCar) {
+  //            setDisplayedAdverts([]);
+  //          }
+  //          setDisplayedAdverts((prevAdverts) => [...prevAdverts, ...data]);
+  //        });
+  //    };
+
+  //    fetchData();
+  //  }, [dispatch, page, selectedCar]);
+
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       await dispatch(
         requestAdverts({
           page,
@@ -45,6 +68,7 @@ const CatalogList = ({ selectedCar }) => {
             setDisplayedAdverts([]);
           }
           setDisplayedAdverts((prevAdverts) => [...prevAdverts, ...data]);
+          setLoading(false);
         });
     };
 
@@ -68,14 +92,29 @@ const CatalogList = ({ selectedCar }) => {
     );
   };
 
+  // const onLoadMore = async () => {
+  //   if (!loading)
+  //     await dispatch(requestAdverts(page + 1))
+  //       .unwrap()
+  //       .then((data) => {
+  //         setDisplayedAdverts((prevAdverts) => [...prevAdverts, ...data]);
+  //         setPage((prevPage) => prevPage + 1);
+  //       });
+  // };
+
   const onLoadMore = async () => {
-    await dispatch(requestAdverts(page + 1))
-      .unwrap()
-      .then((data) => {
-        setDisplayedAdverts((prevAdverts) => [...prevAdverts, ...data]);
-        setPage((prevPage) => prevPage + 1);
-      });
+    if (!loading) {
+      setLoading(true);
+      await dispatch(requestAdverts(page + 1))
+        .unwrap()
+        .then((data) => {
+          setDisplayedAdverts((prevAdverts) => [...prevAdverts, ...data]);
+          setPage((prevPage) => prevPage + 1);
+          setLoading(false);
+        });
+    }
   };
+
   return (
     <>
       <CarBoxStyled>
