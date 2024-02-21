@@ -1,4 +1,4 @@
-import{u as i,a as o,j as e,L as n,N as a}from"./index-7-RHTFBX.js";import{g as s,a as p}from"./selectors-w-DAqvTx.js";const l="/CarRent/assets/white-D-sGmAAp.jpg",c=i.section`
+import{u as i,a as o,j as e,L as n,N as a}from"./index-8Vk_yq8i.js";import{g as s,a as p}from"./selectors-w-DAqvTx.js";const l="/CarRent/assets/white-D-sGmAAp.jpg",c=i.section`
   display: flex;
   flex-direction: column;
   align-items: center;

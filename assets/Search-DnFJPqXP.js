@@ -1,4 +1,4 @@
-import{u as ze,j as y,r as v,R as Nt,d as sr,B as lr}from"./index-7-RHTFBX.js";function ur(t){var e=Object.create(null);return function(r){return e[r]===void 0&&(e[r]=t(r)),e[r]}}const cr=ze.li`
+import{u as ze,j as y,r as v,R as Nt,d as sr,B as lr}from"./index-8Vk_yq8i.js";function ur(t){var e=Object.create(null);return function(r){return e[r]===void 0&&(e[r]=t(r)),e[r]}}const cr=ze.li`
   width: 274px;
   height: 426px;
 
@@ -26,7 +26,6 @@ import{u as ze,j as y,r as v,R as Nt,d as sr,B as lr}from"./index-7-RHTFBX.js";f
     background-color: transparent;
     top: 14px;
     right: 14px;
-    cursor: pointer;
   }
 
   .icon-heart {
@@ -35,6 +34,7 @@ import{u as ze,j as y,r as v,R as Nt,d as sr,B as lr}from"./index-7-RHTFBX.js";f
     fill: none;
     stroke: var(--primary-white);
   }
+
   .favorite {
     width: 18px;
     height: 18px;
@@ -64,7 +64,6 @@ import{u as ze,j as y,r as v,R as Nt,d as sr,B as lr}from"./index-7-RHTFBX.js";f
     display: flex;
     flex-direction: column;
     gap: 4px;
-    /* margin-bottom: 28px; */
 
     color: var(--primary-grey);
   }
@@ -81,7 +80,6 @@ import{u as ze,j as y,r as v,R as Nt,d as sr,B as lr}from"./index-7-RHTFBX.js";f
     align-items: center;
 
     width: 100%;
-    /* height: auto; */
     padding-top: 12px;
     padding-bottom: 12px;
 
@@ -91,10 +89,10 @@ import{u as ze,j as y,r as v,R as Nt,d as sr,B as lr}from"./index-7-RHTFBX.js";f
     color: var(--primary-white);
     background-color: var(--bg-blue);
     border-radius: 12px;
-    cursor: pointer;
   }
 
-  .button-card:hover {
+  .button-card:hover,
+  .button-card:focus {
     background-color: var(--hover-blue);
     box-shadow: var(--btn-box-shadow);
   }
@@ -133,9 +131,10 @@ import{u as ze,j as y,r as v,R as Nt,d as sr,B as lr}from"./index-7-RHTFBX.js";f
     right: 16px;
 
     stroke: var(--primary-black);
-    cursor: pointer;
   }
-  .icon-close:hover {
+
+  .icon-close:hover,
+  .icon-close:focus {
     stroke: var(--primary-blue);
   }
 
@@ -222,7 +221,11 @@ import{u as ze,j as y,r as v,R as Nt,d as sr,B as lr}from"./index-7-RHTFBX.js";f
     padding: 12px, 50px;
     color: var(--primary-white);
     background-color: var(--bg-blue);
-    cursor: pointer;
+  }
+  .rental-button:hover,
+  .rental-button:focus {
+    background-color: var(--hover-blue);
+    box-shadow: var(--btn-box-shadow);
   }
 
   @media (min-width: 768px) {
@@ -252,9 +255,6 @@ import{u as ze,j as y,r as v,R as Nt,d as sr,B as lr}from"./index-7-RHTFBX.js";f
       height: 268px;
     }
   }
-  /* body.active-modal {
-    overflow-y: hidden;
-  } */
 `,fr="/CarRent/sprite.svg",ft=({className:t,id:e})=>y.jsx("svg",{className:t,children:y.jsx("use",{href:`${fr}#icon-${e}`})}),pr=({open:t,closeModal:e,advert:r})=>{if(!t)return null;v.useEffect(()=>{const x=E=>{E.code==="Escape"&&e()};return window.addEventListener("keydown",x),()=>{window.removeEventListener("keydown",x)}},[e]);const i=x=>{x.currentTarget===x.target&&e(!1)},{id:n,make:o,model:s,year:l,img:a,rentalPrice:u,address:c,rentalCompany:d,type:m,fuelConsumption:g,engineSize:b,description:h,accessories:f,functionalities:p,rentalConditions:S,mileage:C}=r,M=c.split(" "),V=S.split(`
 `),P=V[0].split(":");return y.jsx(dr,{onClick:i,children:y.jsxs("div",{className:"modal-container",children:[y.jsxs("div",{children:[y.jsx("button",{onClick:e,className:"close-button",children:y.jsx(ft,{className:"icon-close",id:"cross"})}),y.jsx("img",{src:a,alt:o,className:"modal-image"}),y.jsxs("h2",{className:"car-modal-title",children:[o,y.jsxs("span",{children:[y.jsx("span",{className:"custom-nbsp",children:" "})," ",s,","]}),y.jsx("span",{className:"custom-nbsp",children:" "})," ",l]}),y.jsxs("div",{className:"modal-car-details ",children:[y.jsxs("p",{children:[M[0],y.jsx("span",{className:"span-line",children:" | "}),M[1],y.jsx("span",{className:"span-line",children:" | "}),"Id: ",n,y.jsx("span",{className:"span-line",children:" | "}),"Year: ",l,y.jsx("span",{className:"span-line",children:" | "}),"Type: ",m,y.jsx("span",{className:"span-line",children:" | "}),d]}),y.jsxs("p",{children:["FuelConsumption: ",g,y.jsx("span",{className:"span-line",children:" | "}),"EngineSize: ",b]})]}),y.jsx("p",{className:"car-description",children:h}),y.jsx("h3",{className:"accessories-title",children:"Accessories and functionalities:"}),y.jsxs("div",{className:"accessories-box",children:[y.jsx("p",{children:f&&f.join(" | ")}),y.jsxs("p",{children:[" ",p&&p.join(" | ")]})]}),y.jsx("h3",{className:"rental-cond-title",children:"Rental Conditions:"}),y.jsxs("div",{className:"rental-cond-box",children:[y.jsxs("p",{className:"condition",children:[P[0],": ",y.jsx("span",{className:"special",children:P[1]})]}),y.jsxs("p",{className:"condition",children:[" ",V[1]]}),y.jsxs("p",{className:"condition",children:[" ",V[2]]}),y.jsxs("p",{className:"condition",children:["Mileage:"," ",y.jsx("span",{className:"span-numbers",children:new Intl.NumberFormat("en").format(C)})]}),y.jsxs("p",{className:"condition",children:["Price:"," ",y.jsxs("span",{className:"span-numbers",children:[u.slice(1),"$"]})]})]})]}),y.jsx("a",{href:"tel:+380730000000",className:"rental-button",children:"Rental car"})]})})},ds=({advert:t,addFavorite:e,removeFavorite:r,isFavorite:i})=>{const[n,o]=v.useState(!1),s=()=>{o(!1),document.body.style.overflow="auto"},l=()=>{o(!0),document.body.style.overflow="hidden"},{make:a,model:u,year:c,img:d,rentalPrice:m,address:g,rentalCompany:b,type:h,mileage:f,functionalities:p}=t,S=g.split(" ");return y.jsx(y.Fragment,{children:y.jsxs(cr,{children:[y.jsxs("div",{className:"img-box",children:[y.jsx("img",{src:d,alt:a,className:"card-image"}),i?y.jsx("button",{className:"button-heart",onClick:()=>r(t.id),children:y.jsx(ft,{className:"favorite",id:"heart"})}):y.jsx("button",{className:"button-heart",onClick:()=>e(t.id),children:y.jsx(ft,{className:"icon-heart",id:"heart"})}),y.jsxs("div",{className:"car-info",children:[y.jsxs("h2",{children:[a,y.jsxs("span",{children:[y.jsx("span",{className:"custom-nbsp",children:" "})," ",u,","]}),y.jsx("span",{className:"custom-nbsp",children:" "})," ",c]}),y.jsx("h2",{children:m})]}),y.jsxs("div",{className:"car-details",children:[y.jsxs("p",{children:[S[3],y.jsx("span",{className:"span-line",children:" | "}),S[4],y.jsx("span",{className:"span-line",children:" | "}),b,y.jsx("span",{className:"span-line",children:" | "}),"Premium"]}),y.jsxs("p",{children:[h,y.jsx("span",{className:"span-line",children:" | "}),u,y.jsx("span",{className:"span-line",children:" | "}),f,y.jsx("span",{className:"span-line",children:" | "}),p[0]]})]})]}),y.jsx("button",{className:"button-card",onClick:l,children:"Learn more"}),y.jsx(pr,{open:n,closeModal:s,advert:t})]})})},fs=ze.ul`
   display: grid;
@@ -297,10 +297,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     font-size: 14px;
     color: var(--primary-white);
     background-color: var(--bg-blue);
-    cursor: pointer;
   }
 
-  .button-search:hover {
+  .button-search:hover,
+  .button-search:focus {
     color: var(--primary-white);
     background-color: var(--hover-blue);
     box-shadow: var(--btn-box-shadow);
